@@ -35,14 +35,14 @@
 #include <iostream>
 #include <vector>
 // Sizing
-#define JOBCOLWIDTH (250)
+#define JOBCOLWIDTH (350)
 #define XJOBCOL1 (10)
 #define XJOBCOL2 (JOBCOLWIDTH + 25)
 #define XJOBCOL3 (2*JOBCOLWIDTH + 40)
-#define JOBHEIGHT (170)
+#define JOBHEIGHT (204)
 #define JOBHALFHEIGHT ( (JOBHEIGHT) / (2) )
-#define STDOUT_Y (60)
-#define STDERR_Y (170)
+#define STDOUT_Y (75)
+#define STDERR_Y (190)
 
 #define DO_WRITE true
 #define DONT_WRITE false
@@ -55,7 +55,7 @@
 #define DO_MKDIR true
 #define DONT_MKDIR false
 // font size of browser windows on the main GUI
-#define RLN_FONTSIZE 13
+#define RLN_FONTSIZE 18
 
 // Maximum number of jobs in the job-browsers in the pipeline-part of the GUI
 #define MAX_JOBS_BROWSER 50

@@ -146,13 +146,13 @@ int SchedulerWindow::fill(FileName _pipeline_name, std::vector<FileName> _schedu
 	// Button to execute
 	Fl_Button *execute_button = new Fl_Button(w()-200, current_y, 80, 30, "Execute");
 	execute_button->color(GUI_RUNBUTTON_COLOR);
-	execute_button->labelsize(12);
+	execute_button->labelsize(17);
 	execute_button->callback(cb_execute, this);
 
 	// Button to cancel
 	Fl_Button *cancel_button = new Fl_Button(w()-100, current_y, 80, 30, "Cancel");
 	cancel_button->color(GUI_RUNBUTTON_COLOR);
-	cancel_button->labelsize(12);
+	cancel_button->labelsize(17);
 	cancel_button->callback(cb_cancel, this);
 
 	resizable(*this);
@@ -261,14 +261,14 @@ NoteEditorWindow::NoteEditorWindow(int w, int h, const char* title, FileName _fn
 		// Button to save and exit
 		Fl_Button *save_button = new Fl_Button(w-200, h-40, 80, 30, "Save");
 		save_button->color(GUI_RUNBUTTON_COLOR);
-		save_button->labelsize(12);
+		save_button->labelsize(17);
 		save_button->callback(cb_save, this);
 	}
 
 	// Button to exit
 	Fl_Button *cancel_button = new Fl_Button(w-100, h-40, 80, 30, "Cancel");
 	cancel_button->color(GUI_RUNBUTTON_COLOR);
-	cancel_button->labelsize(12);
+	cancel_button->labelsize(17);
 	cancel_button->callback(cb_cancel, this);
 	resizable(*this);
 }
@@ -369,6 +369,7 @@ GuiMainWindow::GuiMainWindow(int w, int h, const char* title, FileName fn_pipe,
  		color(GUI_BACKGROUND_COLOR);
  	}
  	menubar = new Fl_Menu_Bar(-3, 0, WCOL0-7, MENUHEIGHT);
+	menubar->textsize(ENTRY_FONTSIZE);
 	menubar->add("File/Re-read pipeline",  FL_ALT+'r', cb_reread_pipeline, this);
 	menubar->add("File/Edit project note",  FL_ALT+'e', cb_edit_project_note, this);
 	if (!maingui_do_read_only)
@@ -408,14 +409,14 @@ GuiMainWindow::GuiMainWindow(int w, int h, const char* title, FileName fn_pipe,
 	if (_do_tomo)
 	{
 
-		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 		browser->add("Tomo import");
 		gui_jobwindows[nr_browse_tabs] = new JobWindow();
 		gui_jobwindows[nr_browse_tabs]->initialise(PROC_TOMO_IMPORT);
 		browse_grp[nr_browse_tabs]->end();
 		nr_browse_tabs++;
 
-		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 		browser->add("Make pseudo-subtomos");
 		gui_jobwindows[nr_browse_tabs] = new JobWindow();
 		gui_jobwindows[nr_browse_tabs]->initialise(PROC_TOMO_SUBTOMO);
@@ -425,49 +426,49 @@ GuiMainWindow::GuiMainWindow(int w, int h, const char* title, FileName fn_pipe,
 	else
 	{
 
-		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 		browser->add("Import");
 		gui_jobwindows[nr_browse_tabs] = new JobWindow();
 		gui_jobwindows[nr_browse_tabs]->initialise(PROC_IMPORT);
 		browse_grp[nr_browse_tabs]->end();
 		nr_browse_tabs++;
 
-		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 		browser->add("Motion correction");
 		gui_jobwindows[nr_browse_tabs] = new JobWindow();
 		gui_jobwindows[nr_browse_tabs]->initialise(PROC_MOTIONCORR);
 		browse_grp[nr_browse_tabs]->end();
 		nr_browse_tabs++;
 
-		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 		browser->add("CTF estimation");
 		gui_jobwindows[nr_browse_tabs] = new JobWindow();
 		gui_jobwindows[nr_browse_tabs]->initialise(PROC_CTFFIND);
 		browse_grp[nr_browse_tabs]->end();
 		nr_browse_tabs++;
 
-		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 		browser->add("Manual picking");
 		gui_jobwindows[nr_browse_tabs] = new JobWindow();
 		gui_jobwindows[nr_browse_tabs]->initialise(PROC_MANUALPICK);
 		browse_grp[nr_browse_tabs]->end();
 		nr_browse_tabs++;
 
-		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 		browser->add("Auto-picking");
 		gui_jobwindows[nr_browse_tabs] = new JobWindow();
 		gui_jobwindows[nr_browse_tabs]->initialise(PROC_AUTOPICK);
 		browse_grp[nr_browse_tabs]->end();
 		nr_browse_tabs++;
 
-		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 		browser->add("Particle extraction");
 		gui_jobwindows[nr_browse_tabs] = new JobWindow();
 		gui_jobwindows[nr_browse_tabs]->initialise(PROC_EXTRACT);
 		browse_grp[nr_browse_tabs]->end();
 		nr_browse_tabs++;
 
-		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 		browser->add("2D classification");
 		gui_jobwindows[nr_browse_tabs] = new JobWindow();
 		gui_jobwindows[nr_browse_tabs]->initialise(PROC_2DCLASS);
@@ -476,35 +477,35 @@ GuiMainWindow::GuiMainWindow(int w, int h, const char* title, FileName fn_pipe,
 
 	}
 
-	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 	browser->add("3D initial model");
 	gui_jobwindows[nr_browse_tabs] = new JobWindow();
 	gui_jobwindows[nr_browse_tabs]->initialise(PROC_INIMODEL);
 	browse_grp[nr_browse_tabs]->end();
 	nr_browse_tabs++;
 
-	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 	browser->add("3D classification");
 	gui_jobwindows[nr_browse_tabs] = new JobWindow();
 	gui_jobwindows[nr_browse_tabs]->initialise(PROC_3DCLASS);
 	browse_grp[nr_browse_tabs]->end();
 	nr_browse_tabs++;
 
-	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 	browser->add("3D auto-refine");
 	gui_jobwindows[nr_browse_tabs] = new JobWindow();
 	gui_jobwindows[nr_browse_tabs]->initialise(PROC_3DAUTO, _do_tomo);
 	browse_grp[nr_browse_tabs]->end();
 	nr_browse_tabs++;
 
-	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 	browser->add("3D multi-body");
 	gui_jobwindows[nr_browse_tabs] = new JobWindow();
 	gui_jobwindows[nr_browse_tabs]->initialise(PROC_MULTIBODY);
 	browse_grp[nr_browse_tabs]->end();
 	nr_browse_tabs++;
 
-	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 	browser->add("Subset selection");
 	gui_jobwindows[nr_browse_tabs] = new JobWindow();
 	gui_jobwindows[nr_browse_tabs]->initialise(PROC_CLASSSELECT);
@@ -513,21 +514,21 @@ GuiMainWindow::GuiMainWindow(int w, int h, const char* title, FileName fn_pipe,
 
 	if (_do_tomo)
 	{
-		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 		browser->add("Tomo reconstruct particle");
 		gui_jobwindows[nr_browse_tabs] = new JobWindow();
 		gui_jobwindows[nr_browse_tabs]->initialise(PROC_TOMO_RECONSTRUCT);
 		browse_grp[nr_browse_tabs]->end();
 		nr_browse_tabs++;
 
-		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 		browser->add("Tomo CTF refinement");
 		gui_jobwindows[nr_browse_tabs] = new JobWindow();
 		gui_jobwindows[nr_browse_tabs]->initialise(PROC_TOMO_CTFREFINE);
 		browse_grp[nr_browse_tabs]->end();
 		nr_browse_tabs++;
 
-		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 		browser->add("Tomo frame alignment");
 		gui_jobwindows[nr_browse_tabs] = new JobWindow();
 		gui_jobwindows[nr_browse_tabs]->initialise(PROC_TOMO_ALIGN);
@@ -537,14 +538,14 @@ GuiMainWindow::GuiMainWindow(int w, int h, const char* title, FileName fn_pipe,
 	else
 	{
 
-		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 		browser->add("CTF refinement");
 		gui_jobwindows[nr_browse_tabs] = new JobWindow();
 		gui_jobwindows[nr_browse_tabs]->initialise(PROC_CTFREFINE);
 		browse_grp[nr_browse_tabs]->end();
 		nr_browse_tabs++;
 
-		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+		browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 		browser->add("Bayesian polishing");
 		gui_jobwindows[nr_browse_tabs] = new JobWindow();
 		gui_jobwindows[nr_browse_tabs]->initialise(PROC_MOTIONREFINE);
@@ -552,42 +553,42 @@ GuiMainWindow::GuiMainWindow(int w, int h, const char* title, FileName fn_pipe,
 		nr_browse_tabs++;
 	}
 
-	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 	browser->add("Mask creation");
 	gui_jobwindows[nr_browse_tabs] = new JobWindow();
 	gui_jobwindows[nr_browse_tabs]->initialise(PROC_MASKCREATE);
 	browse_grp[nr_browse_tabs]->end();
 	nr_browse_tabs++;
 
-	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 	browser->add("Join star files");
 	gui_jobwindows[nr_browse_tabs] = new JobWindow();
 	gui_jobwindows[nr_browse_tabs]->initialise(PROC_JOINSTAR);
 	browse_grp[nr_browse_tabs]->end();
 	nr_browse_tabs++;
 
-	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 	browser->add("Particle subtraction");
 	gui_jobwindows[nr_browse_tabs] = new JobWindow();
 	gui_jobwindows[nr_browse_tabs]->initialise(PROC_SUBTRACT);
 	browse_grp[nr_browse_tabs]->end();
 	nr_browse_tabs++;
 
-	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 	browser->add("Post-processing");
 	gui_jobwindows[nr_browse_tabs] = new JobWindow();
 	gui_jobwindows[nr_browse_tabs]->initialise(PROC_POST, _do_tomo);
 	browse_grp[nr_browse_tabs]->end();
 	nr_browse_tabs++;
 
-	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 	browser->add("Local resolution");
 	gui_jobwindows[nr_browse_tabs] = new JobWindow();
 	gui_jobwindows[nr_browse_tabs]->initialise(PROC_RESMAP);
 	browse_grp[nr_browse_tabs]->end();
 	nr_browse_tabs++;
 
-	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 550, 615-MENUHEIGHT);
+	browse_grp[nr_browse_tabs] = new Fl_Group(WCOL0, 2, 900, 615-MENUHEIGHT);
 	browser->add("External");
 	gui_jobwindows[nr_browse_tabs] = new JobWindow();
 	gui_jobwindows[nr_browse_tabs]->initialise(PROC_EXTERNAL);
@@ -600,13 +601,14 @@ GuiMainWindow::GuiMainWindow(int w, int h, const char* title, FileName fn_pipe,
 
 	// Add run buttons on the menubar as well
 
-	print_CL_button = new Fl_Button(GUIWIDTH - 215, h-90, 100, 32, "Check command");
+	print_CL_button = new Fl_Button(GUIWIDTH - 300, h-95, 140, 32, "Check command");
 	print_CL_button->color(GUI_RUNBUTTON_COLOR);
-	print_CL_button->labelsize(11);
+	print_CL_button->labelsize(15);
 	print_CL_button->callback(cb_print_cl, this);
 
-	expand_stdout_button = new Fl_Button(XJOBCOL1, GUIHEIGHT_EXT_START , 85, MENUHEIGHT, "I/O view");
+	expand_stdout_button = new Fl_Button(XJOBCOL1, GUIHEIGHT_EXT_START + 8, 102, MENUHEIGHT, "I/O view");
 	expand_stdout_button->color(GUI_BUTTON_COLOR);
+	expand_stdout_button->labelsize(ENTRY_FONTSIZE);
 	expand_stdout_button->callback(cb_toggle_expand_stdout, this);
 
 
@@ -614,24 +616,25 @@ GuiMainWindow::GuiMainWindow(int w, int h, const char* title, FileName fn_pipe,
 	pipeliner_grp = new Fl_Group(0, 0, 2*w, 2*h);
 	pipeliner_grp->begin();
 
-	run_button = new Fl_Button(GUIWIDTH - 110 , h-90, 100, 32, "Run!");
+	run_button = new Fl_Button(GUIWIDTH - 150 , h-95, 120, 32, "Run!");
 	run_button->color(GUI_RUNBUTTON_COLOR);
 	run_button->labelfont(FL_ITALIC);
-	run_button->labelsize(14);
+	run_button->labelsize(19);
 	run_button->callback(cb_run, this);
 	if (maingui_do_read_only)
 		run_button->deactivate();
 
-	schedule_button = new Fl_Button(GUIWIDTH - 320 , h-90, 100, 32, "Schedule");
+	schedule_button = new Fl_Button(GUIWIDTH - 430 , h-95, 120, 32, "Schedule");
 	schedule_button->color(GUI_RUNBUTTON_COLOR);
 	schedule_button->labelfont(FL_ITALIC);
-	schedule_button->labelsize(14);
+	schedule_button->labelsize(19);
 	schedule_button->callback(cb_schedule, this);
 	if (maingui_do_read_only)
 		schedule_button->deactivate();
 
 
-	menubar2 = new Fl_Menu_Bar(XJOBCOL1+87, GUIHEIGHT_EXT_START, 95, MENUHEIGHT);
+	menubar2 = new Fl_Menu_Bar(XJOBCOL1+107, GUIHEIGHT_EXT_START + 8, 115, MENUHEIGHT);
+	menubar2->textsize(ENTRY_FONTSIZE);
 	menubar2->color(GUI_BUTTON_COLOR);
 	menubar2->add("Job actions/Edit Note", 0, cb_edit_note, this);
 	if (!maingui_do_read_only)
@@ -648,6 +651,8 @@ GuiMainWindow::GuiMainWindow(int w, int h, const char* title, FileName fn_pipe,
 
 	// Fl_input with the alias of the new job (or the name of an existing one)
 	alias_current_job = new Fl_Input(XJOBCOL2 , GUIHEIGHT_EXT_START+3, JOBCOLWIDTH, MENUHEIGHT-6, "Current:");
+	alias_current_job->textsize(ENTRY_FONTSIZE);
+	alias_current_job->labelsize(ENTRY_FONTSIZE);
 
 	// Left-hand side browsers for input/output nodes and processes
 	display_io_node  = new Fl_Choice(XJOBCOL3+50, GUIHEIGHT_EXT_START+3, 200, MENUHEIGHT-6);
@@ -661,48 +666,53 @@ GuiMainWindow::GuiMainWindow(int w, int h, const char* title, FileName fn_pipe,
 	// Add browsers for finished and running jobs
 	Fl_Text_Buffer *textbuff1 = new Fl_Text_Buffer();
 	textbuff1->text("Finished jobs");
-	Fl_Text_Display* textdisp1 = new Fl_Text_Display(XJOBCOL1, GUIHEIGHT_EXT_START2, JOBCOLWIDTH, 25);
+	Fl_Text_Display* textdisp1 = new Fl_Text_Display(XJOBCOL1, GUIHEIGHT_EXT_START2, JOBCOLWIDTH, 30);
 	textdisp1->buffer(textbuff1);
+	textdisp1->textsize(ENTRY_FONTSIZE);
 	textdisp1->color(GUI_BACKGROUND_COLOR);
-	finished_job_browser  = new Fl_Select_Browser(XJOBCOL1, GUIHEIGHT_EXT_START2 + 25, JOBCOLWIDTH, JOBHEIGHT+25);
+	finished_job_browser  = new Fl_Select_Browser(XJOBCOL1, GUIHEIGHT_EXT_START2 + 30, JOBCOLWIDTH, JOBHEIGHT+30);
 	finished_job_browser->callback(cb_select_finished_job, this);
 	finished_job_browser->textsize(RLN_FONTSIZE-1);
 	finished_job_browser->end();
 
 	Fl_Text_Buffer *textbuff2 = new Fl_Text_Buffer();
 	textbuff2->text("Running jobs");
-	Fl_Text_Display* textdisp2 = new Fl_Text_Display(XJOBCOL2, GUIHEIGHT_EXT_START2, JOBCOLWIDTH, 25);
+	Fl_Text_Display* textdisp2 = new Fl_Text_Display(XJOBCOL2, GUIHEIGHT_EXT_START2, JOBCOLWIDTH, 30);
 	textdisp2->buffer(textbuff2);
+	textdisp2->textsize(ENTRY_FONTSIZE);
 	textdisp2->color(GUI_BACKGROUND_COLOR);
-	running_job_browser   = new Fl_Select_Browser(XJOBCOL2, GUIHEIGHT_EXT_START2 + 25, JOBCOLWIDTH, JOBHALFHEIGHT);
+	running_job_browser   = new Fl_Select_Browser(XJOBCOL2, GUIHEIGHT_EXT_START2 + 30, JOBCOLWIDTH, JOBHALFHEIGHT);
 	running_job_browser->callback(cb_select_running_job, this);
 	running_job_browser->textsize(RLN_FONTSIZE-1);
 	running_job_browser->end();
 
 	Fl_Text_Buffer *textbuff3 = new Fl_Text_Buffer();
 	textbuff3->text("Scheduled jobs");
-	Fl_Text_Display* textdisp3 = new Fl_Text_Display(XJOBCOL2, GUIHEIGHT_EXT_START2 + JOBHALFHEIGHT + 25, JOBCOLWIDTH, 25);
+	Fl_Text_Display* textdisp3 = new Fl_Text_Display(XJOBCOL2, GUIHEIGHT_EXT_START2 + JOBHALFHEIGHT + 30, JOBCOLWIDTH, 30);
 	textdisp3->buffer(textbuff3);
+	textdisp3->textsize(ENTRY_FONTSIZE);
 	textdisp3->color(GUI_BACKGROUND_COLOR);
-	scheduled_job_browser = new Fl_Select_Browser(XJOBCOL2, GUIHEIGHT_EXT_START2 + 25 + JOBHALFHEIGHT + 25, JOBCOLWIDTH, JOBHALFHEIGHT);
+	scheduled_job_browser = new Fl_Select_Browser(XJOBCOL2, GUIHEIGHT_EXT_START2 + 30 + JOBHALFHEIGHT + 30, JOBCOLWIDTH, JOBHALFHEIGHT);
 	scheduled_job_browser->callback(cb_select_scheduled_job, this);
 	scheduled_job_browser->textsize(RLN_FONTSIZE-1);
 
 	Fl_Text_Buffer *textbuff4 = new Fl_Text_Buffer();
 	textbuff4->text("Input to this job");
-	Fl_Text_Display* textdisp4 = new Fl_Text_Display(XJOBCOL3, GUIHEIGHT_EXT_START2, JOBCOLWIDTH, 25);
+	Fl_Text_Display* textdisp4 = new Fl_Text_Display(XJOBCOL3, GUIHEIGHT_EXT_START2, JOBCOLWIDTH, 30);
 	textdisp4->buffer(textbuff4);
+	textdisp4->textsize(ENTRY_FONTSIZE);
 	textdisp4->color(GUI_BACKGROUND_COLOR);
-	input_job_browser    = new Fl_Select_Browser(XJOBCOL3,  GUIHEIGHT_EXT_START2 + 25, JOBCOLWIDTH, JOBHALFHEIGHT);
+	input_job_browser    = new Fl_Select_Browser(XJOBCOL3,  GUIHEIGHT_EXT_START2 + 30, JOBCOLWIDTH, JOBHALFHEIGHT);
 	input_job_browser->callback(cb_select_input_job, this);
 	input_job_browser->textsize(RLN_FONTSIZE-1);
 
 	Fl_Text_Buffer *textbuff5 = new Fl_Text_Buffer();
 	textbuff5->text("Output from this job");
-	Fl_Text_Display* textdisp5 = new Fl_Text_Display(XJOBCOL3, GUIHEIGHT_EXT_START2 + JOBHALFHEIGHT + 25, JOBCOLWIDTH, 25);
+	Fl_Text_Display* textdisp5 = new Fl_Text_Display(XJOBCOL3, GUIHEIGHT_EXT_START2 + JOBHALFHEIGHT + 30, JOBCOLWIDTH, 30);
 	textdisp5->buffer(textbuff5);
+	textdisp5->textsize(ENTRY_FONTSIZE);
 	textdisp5->color(GUI_BACKGROUND_COLOR);
-	output_job_browser   = new Fl_Select_Browser(XJOBCOL3,  GUIHEIGHT_EXT_START2 + 25 + JOBHALFHEIGHT + 25, JOBCOLWIDTH, JOBHALFHEIGHT);
+	output_job_browser   = new Fl_Select_Browser(XJOBCOL3,  GUIHEIGHT_EXT_START2 + 30 + JOBHALFHEIGHT + 30, JOBCOLWIDTH, JOBHALFHEIGHT);
 	output_job_browser->callback(cb_select_output_job, this);
 	output_job_browser->textsize(RLN_FONTSIZE-1);
 
@@ -1475,14 +1485,14 @@ void GuiMainWindow::cb_toggle_continue_i()
 		}
 		run_button->color(GUI_BUTTON_COLOR);
 		run_button->labelfont(FL_ITALIC);
-		run_button->labelsize(13);
+		run_button->labelsize(18);
 	}
 	else
 	{
 		run_button->label("Run!");
 		run_button->color(GUI_RUNBUTTON_COLOR);
 		run_button->labelfont(FL_ITALIC);
-		run_button->labelsize(16);
+		run_button->labelsize(23);
 		alias_current_job->activate();
 	}
 

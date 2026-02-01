@@ -112,6 +112,7 @@ void JobWindow::setupTabs(int nr_tabs)
 
 		runtab = new Fl_Group(x, current_y, w, h - MENUHEIGHT, "");
 		runtab->label("Running");
+	runtab->labelsize(ENTRY_FONTSIZE);
 		// Fill this in later, when we have the joboptions
 		runtab->end();
 		setupRunTab();
@@ -147,7 +148,7 @@ void JobWindow::setupRunTab()
 		current_y += STEPY/4;
 
 	// Set up queue groups for running tab
-	queue_group = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	queue_group = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	queue_group->end();
 
 	place("do_queue", TOGGLE_LEAVE_ACTIVE, queue_group);
@@ -457,9 +458,10 @@ void JobWindow::initialiseImportWindow()
 
 	tab1->begin();
 	tab1->label("Movies/mics");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 
 	place("do_raw", TOGGLE_DEACTIVATE, group1, false);
@@ -489,9 +491,10 @@ void JobWindow::initialiseImportWindow()
 
 	tab2->begin();
 	tab2->label("Others");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group2->end();
 	place("do_other", TOGGLE_DEACTIVATE, group2, false);
 	group2->begin();
@@ -519,6 +522,7 @@ void JobWindow::initialiseMotioncorrWindow()
 
 	tab1->begin();
 	tab1->label("I/O");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("input_star_mics", TOGGLE_DEACTIVATE);
@@ -536,7 +540,7 @@ void JobWindow::initialiseMotioncorrWindow()
 	// Add a little spacer
 	current_y += STEPY/2;
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 	place("do_dose_weighting", TOGGLE_DEACTIVATE, group1);
 	group1->begin();
@@ -545,7 +549,7 @@ void JobWindow::initialiseMotioncorrWindow()
 
 	guientries["do_dose_weighting"].cb_menu_i(); // make default active
 
-	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group2->end();
 	place("do_save_ps", TOGGLE_DEACTIVATE, group2);
 	group2->begin();
@@ -555,6 +559,7 @@ void JobWindow::initialiseMotioncorrWindow()
 
 	tab2->begin();
 	tab2->label("Motion");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("bfactor", TOGGLE_DEACTIVATE);
@@ -567,7 +572,7 @@ void JobWindow::initialiseMotioncorrWindow()
 	place("fn_defect", TOGGLE_DEACTIVATE);
 
 	current_y += STEPY/2;
-	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group4->end();
 	place("do_own_motioncor", TOGGLE_DEACTIVATE, group4, true);
 	group4->begin();
@@ -587,6 +592,7 @@ void JobWindow::initialiseCtffindWindow()
 
 	tab1->begin();
 	tab1->label("I/O");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("input_star_mics", TOGGLE_DEACTIVATE);
@@ -595,7 +601,7 @@ void JobWindow::initialiseCtffindWindow()
 	// Add a little spacer
 	current_y += STEPY/2;
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 
 	place("do_phaseshift", TOGGLE_DEACTIVATE, group1);
@@ -615,9 +621,10 @@ void JobWindow::initialiseCtffindWindow()
 
 	tab2->begin();
 	tab2->label("CTFFIND-4.1");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group2->end();
 
 	place("use_ctffind4", TOGGLE_DEACTIVATE, group2);
@@ -646,9 +653,10 @@ void JobWindow::initialiseCtffindWindow()
 
 	tab3->begin();
 	tab3->label("Gctf");
+	tab3->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group4->end();
 
 	place("use_gctf", TOGGLE_DEACTIVATE, group4);
@@ -678,6 +686,7 @@ void JobWindow::initialiseManualpickWindow()
 
 	tab1->begin();
 	tab1->label("I/O");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("fn_in", TOGGLE_DEACTIVATE);
@@ -687,7 +696,7 @@ void JobWindow::initialiseManualpickWindow()
 
 	current_y += STEPY/2;
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 	place("do_fom_threshold", TOGGLE_DEACTIVATE, group1);
 	group1->begin();
@@ -699,6 +708,7 @@ void JobWindow::initialiseManualpickWindow()
 
 	tab2->begin();
 	tab2->label("Display");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("diameter");
@@ -712,7 +722,7 @@ void JobWindow::initialiseManualpickWindow()
 	place("highpass");
 	place("angpix");
 
-	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group2->end();
 	place("do_topaz_denoise", TOGGLE_DEACTIVATE, group2);
 	group2->begin();
@@ -723,8 +733,9 @@ void JobWindow::initialiseManualpickWindow()
 	tab2->end();
 	tab3->begin();
 	tab3->label("Colors");
+	tab3->labelsize(ENTRY_FONTSIZE);
 
-	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group3->end();
 
 	resetHeight();
@@ -751,6 +762,7 @@ void JobWindow::initialiseAutopickWindow()
 
 	tab1->begin();
 	tab1->label("I/O");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("fn_input_autopick", TOGGLE_DEACTIVATE);
@@ -766,6 +778,7 @@ void JobWindow::initialiseAutopickWindow()
 	tab1->end();
 	tab2->begin();
 	tab2->label("Laplacian");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("log_diam_min", TOGGLE_DEACTIVATE);
@@ -781,6 +794,7 @@ void JobWindow::initialiseAutopickWindow()
 	tab2->end();
 	tab3->begin();
 	tab3->label("Topaz");
+	tab3->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("fn_topaz_exec");
@@ -789,7 +803,7 @@ void JobWindow::initialiseAutopickWindow()
 	// Add a little spacer
 	current_y += STEPY/2;
 
-	group7 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group7 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group7->end();
 
 	place("do_topaz_pick", TOGGLE_DEACTIVATE, group7);
@@ -803,7 +817,7 @@ void JobWindow::initialiseAutopickWindow()
 	// Add a little spacer
 	current_y += STEPY/2;
 
-	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group5->end();
 	place("do_topaz_train", TOGGLE_DEACTIVATE, group5);
 	group5->begin();
@@ -811,7 +825,7 @@ void JobWindow::initialiseAutopickWindow()
 	place("topaz_nr_particles", TOGGLE_DEACTIVATE);
 	place("topaz_train_picks", TOGGLE_DEACTIVATE);
 
-	group6 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group6 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group6->end();
 
 	place("do_topaz_train_parts", TOGGLE_DEACTIVATE, group6);
@@ -832,11 +846,12 @@ void JobWindow::initialiseAutopickWindow()
 	tab3->end();
 	tab4->begin();
 	tab4->label("References");
+	tab4->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("fn_refs_autopick", TOGGLE_DEACTIVATE);
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 	place("do_ref3d", TOGGLE_DEACTIVATE, group1);
 	group1->begin();
@@ -847,7 +862,7 @@ void JobWindow::initialiseAutopickWindow()
 	guientries["do_ref3d"].cb_menu_i();
 
 	//set up group
-	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group2->end();
 
 	// Add a little spacer
@@ -870,6 +885,7 @@ void JobWindow::initialiseAutopickWindow()
 	tab4->end();
 	tab5->begin();
 	tab5->label("autopicking");
+	tab5->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("threshold_autopick");
@@ -888,7 +904,7 @@ void JobWindow::initialiseAutopickWindow()
 	// Set up queue groups for running tab
 	place("shrink", TOGGLE_DEACTIVATE);
 
-	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group3->end();
 	place("use_gpu", TOGGLE_LEAVE_ACTIVE, group3);
 
@@ -901,9 +917,10 @@ void JobWindow::initialiseAutopickWindow()
 	tab5->end();
 	tab6->begin();
 	tab6->label("Helix");
+	tab6->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group4->end();
 
 	place("do_pick_helical_segments", TOGGLE_DEACTIVATE, group4);
@@ -936,6 +953,7 @@ void JobWindow::initialiseExtractWindow()
 
 	tab1->begin();
 	tab1->label("I/O");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("star_mics", TOGGLE_DEACTIVATE);
@@ -944,7 +962,7 @@ void JobWindow::initialiseExtractWindow()
 	place("coords_suffix", TOGGLE_DEACTIVATE);
 	current_y += STEPY/2;
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 
 	place("do_reextract", TOGGLE_DEACTIVATE, group1);
@@ -953,7 +971,7 @@ void JobWindow::initialiseExtractWindow()
 
 	place("fndata_reextract", TOGGLE_DEACTIVATE);
 	place("do_reset_offsets", TOGGLE_DEACTIVATE);
-	group7 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group7 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group7->end();
 	place("do_recenter", TOGGLE_DEACTIVATE, group7);
 
@@ -974,6 +992,7 @@ void JobWindow::initialiseExtractWindow()
 
 	tab2->begin();
 	tab2->label("extract");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("extract_size", TOGGLE_DEACTIVATE); //(current_y,"Particle box size (pix):", 128, 64, 512, 8, "Size of the extracted particles (in pixels). This should be an even number!");
@@ -982,7 +1001,7 @@ void JobWindow::initialiseExtractWindow()
 	// Add a little spacer
 	current_y += STEPY/2;
 
-	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group3->end();
 	place("do_norm", TOGGLE_DEACTIVATE, group3);
 
@@ -1002,7 +1021,7 @@ Pixels values higher than this many times the image stddev will be replaced with
 	// Add a little spacer
 	current_y += STEPY/2;
 
-	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group4->end();
 	place("do_rescale", TOGGLE_DEACTIVATE, group4);
 	group4->begin();
@@ -1013,7 +1032,7 @@ Pixels values higher than this many times the image stddev will be replaced with
 	// Add a little spacer
 	current_y += STEPY/2;
 
-	group7 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group7 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group7->end();
 	place("do_fom_threshold", TOGGLE_DEACTIVATE, group7);
 	group7->begin();
@@ -1024,9 +1043,10 @@ Pixels values higher than this many times the image stddev will be replaced with
 	tab2->end();
 	tab3->begin();
 	tab3->label("Helix");
+	tab3->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group5->end();
 
 	place("do_extract_helix", TOGGLE_DEACTIVATE, group5);
@@ -1039,7 +1059,7 @@ Pixels values higher than this many times the image stddev will be replaced with
 
 	place("helical_bimodal_angular_priors", TOGGLE_DEACTIVATE);
 
-	group6 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group6 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group6->end();
 
 	current_y += STEPY/2;
@@ -1068,6 +1088,7 @@ void JobWindow::initialiseSelectWindow()
 
 	tab1->begin();
 	tab1->label("I/O");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("fn_model", TOGGLE_DEACTIVATE);
@@ -1078,9 +1099,10 @@ void JobWindow::initialiseSelectWindow()
 
 	tab2->begin();
 	tab2->label("Class options");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group6 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group6 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group6->end();
 
 
@@ -1097,7 +1119,7 @@ void JobWindow::initialiseSelectWindow()
 	current_y += STEPY/2;
 
 	place("do_recenter", TOGGLE_DEACTIVATE);
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 	place("do_regroup", TOGGLE_DEACTIVATE, group1);
 	group1->begin();
@@ -1108,9 +1130,10 @@ void JobWindow::initialiseSelectWindow()
 
 	tab3->begin();
 	tab3->label("Subsets");
+	tab3->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group3->end();
 
 	place("do_select_values", TOGGLE_DEACTIVATE, group3);
@@ -1121,7 +1144,7 @@ void JobWindow::initialiseSelectWindow()
 	group3->end();
 	guientries["do_select_values"].cb_menu_i();
 
-	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group4->end();
 
 	// Add a little spacer
@@ -1134,7 +1157,7 @@ void JobWindow::initialiseSelectWindow()
 	group4->end();
 	guientries["do_discard"].cb_menu_i();
 
-	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group5->end();
 
 	// Add a little spacer
@@ -1152,9 +1175,10 @@ void JobWindow::initialiseSelectWindow()
 
 	tab4->begin();
 	tab4->label("Duplicates");
+	tab4->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group2->end();
 	place("do_remove_duplicates", TOGGLE_DEACTIVATE, group2);
 	group2->begin();
@@ -1175,6 +1199,7 @@ void JobWindow::initialiseClass2DWindow()
 
 	tab1->begin();
 	tab1->label("I/O");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("fn_img", TOGGLE_DEACTIVATE);
@@ -1184,8 +1209,9 @@ void JobWindow::initialiseClass2DWindow()
 
 	tab2->begin();
 	tab2->label("CTF");
+	tab2->labelsize(ENTRY_FONTSIZE);
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 
 	resetHeight();
@@ -1201,6 +1227,7 @@ void JobWindow::initialiseClass2DWindow()
 
 	tab3->begin();
 	tab3->label("Optimisation");
+	tab3->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("nr_classes", TOGGLE_DEACTIVATE);
@@ -1210,7 +1237,7 @@ void JobWindow::initialiseClass2DWindow()
 	current_y += STEPY/2;
 
 	//set up groups
-	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group2->end();
 
 	place("do_em", TOGGLE_DEACTIVATE, group2);
@@ -1225,7 +1252,7 @@ void JobWindow::initialiseClass2DWindow()
 
 
 	//set up groups
-	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group5->end();
 
 	place("do_grad", TOGGLE_DEACTIVATE, group5);
@@ -1259,9 +1286,10 @@ void JobWindow::initialiseClass2DWindow()
 
 	tab4->begin();
 	tab4->label("Sampling");
+	tab4->labelsize(ENTRY_FONTSIZE);
 
 	//set up groups
-	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group3->end();
 
 	resetHeight();
@@ -1283,9 +1311,10 @@ void JobWindow::initialiseClass2DWindow()
 	tab4->end();
 	tab5->begin();
 	tab5->label("Helix");
+	tab5->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group4->end();
 
 	place("do_helix", TOGGLE_DEACTIVATE, group4);
@@ -1296,7 +1325,7 @@ void JobWindow::initialiseClass2DWindow()
 	place("do_bimodal_psi");
 	place("range_psi");
 
-	group7 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group7 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group7->end();
 	place("do_restrict_xoff", TOGGLE_LEAVE_ACTIVE, group7);
 
@@ -1313,11 +1342,12 @@ void JobWindow::initialiseClass2DWindow()
 
 	tab6->begin();
 	tab6->label("Compute");
+	tab6->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("do_parallel_discio");
 	place("nr_pool");
-	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group5->end();
 	place("do_preread_images", TOGGLE_LEAVE_ACTIVE, group5, true);
 	group5->begin();
@@ -1329,7 +1359,7 @@ void JobWindow::initialiseClass2DWindow()
 	current_y += STEPY/2;
 
 	// Set up queue groups for running tab
-	group6 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group6 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group6->end();
 
 	place("use_gpu", TOGGLE_LEAVE_ACTIVE, group6);
@@ -1349,6 +1379,7 @@ void JobWindow::initialiseInimodelWindow()
 
 	tab1->begin();
 	tab1->label("I/O");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("fn_img", TOGGLE_DEACTIVATE);
@@ -1357,8 +1388,9 @@ void JobWindow::initialiseInimodelWindow()
 	tab1->end();
 	tab2->begin();
 	tab2->label("CTF");
+	tab2->labelsize(ENTRY_FONTSIZE);
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 
 	resetHeight();
@@ -1375,6 +1407,7 @@ void JobWindow::initialiseInimodelWindow()
 
 	tab3->begin();
 	tab3->label("Optimisation");
+	tab3->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("nr_iter");
@@ -1393,11 +1426,12 @@ void JobWindow::initialiseInimodelWindow()
 
 	tab4->begin();
 	tab4->label("Compute");
+	tab4->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("do_parallel_discio");
 	place("nr_pool");
-	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group5->end();
 	place("do_preread_images", TOGGLE_LEAVE_ACTIVE, group5, true);
 	group5->begin();
@@ -1409,7 +1443,7 @@ void JobWindow::initialiseInimodelWindow()
 	current_y += STEPY/2;
 
 	// Set up queue groups for running tab
-	group6 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group6 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group6->end();
 
 	place("use_gpu", TOGGLE_LEAVE_ACTIVE, group6);
@@ -1429,6 +1463,7 @@ void JobWindow::initialiseClass3DWindow()
 
 	tab1->begin();
 	tab1->label("I/O");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("fn_img", TOGGLE_DEACTIVATE);
@@ -1439,6 +1474,7 @@ void JobWindow::initialiseClass3DWindow()
 	tab1->end();
 	tab2->begin();
 	tab2->label("Reference");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("ref_correct_greyscale", TOGGLE_DEACTIVATE);
@@ -1451,8 +1487,9 @@ void JobWindow::initialiseClass3DWindow()
 	tab2->end();
 	tab3->begin();
 	tab3->label("CTF");
+	tab3->labelsize(ENTRY_FONTSIZE);
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 
 	resetHeight();
@@ -1468,10 +1505,11 @@ void JobWindow::initialiseClass3DWindow()
 	tab3->end();
 	tab4->begin();
 	tab4->label("Optimisation");
+	tab4->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	//set up groups
-	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group2->end();
 
 	place("nr_classes", TOGGLE_DEACTIVATE);
@@ -1499,9 +1537,10 @@ void JobWindow::initialiseClass3DWindow()
 
 	tab5->begin();
 	tab5->label("Sampling");
+	tab5->labelsize(ENTRY_FONTSIZE);
 
 	//set up groups
-	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group3->end();
 
 	resetHeight();
@@ -1513,7 +1552,7 @@ void JobWindow::initialiseClass3DWindow()
 	place("offset_range");
 	place("offset_step");
 
-	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group4->end();
 
 	place("do_local_ang_searches", TOGGLE_LEAVE_ACTIVE, group4);
@@ -1534,8 +1573,9 @@ void JobWindow::initialiseClass3DWindow()
 
 	tab6->begin();
 	tab6->label("Helix");
+	tab6->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
-	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group5->end();
 
 	//helix_text", TOGGLE_DEACTIVATE); //(current_y, "Nov 21, 2015");
@@ -1550,7 +1590,7 @@ void JobWindow::initialiseClass3DWindow()
 	// Add a little spacer
 	current_y += STEPY/2;
 
-	group8 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group8 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group8->end();
 	place("do_apply_helical_symmetry", TOGGLE_DEACTIVATE, group8);
 	group8->begin();
@@ -1563,7 +1603,7 @@ void JobWindow::initialiseClass3DWindow()
 	// Add a little spacer
 	current_y += STEPY/2;
 
-	group6 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group6 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group6->end();
 	place("do_local_search_helical_symmetry", TOGGLE_DEACTIVATE, group6);
 	group6->begin();
@@ -1578,12 +1618,13 @@ void JobWindow::initialiseClass3DWindow()
 
 	tab7->begin();
 	tab7->label("Compute");
+	tab7->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("do_parallel_discio");
 	place("nr_pool");
 	place("do_pad1");
-	group7 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group7 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group7->end();
 	place("do_preread_images", TOGGLE_LEAVE_ACTIVE, group7, true);
 	group7->begin();
@@ -1594,7 +1635,7 @@ void JobWindow::initialiseClass3DWindow()
 	current_y += STEPY/2;
 
 	// Set up queue groups for running tab
-	group8 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group8 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group8->end();
 	place("use_gpu", TOGGLE_LEAVE_ACTIVE, group8);
 	group8->begin();
@@ -1610,6 +1651,7 @@ void JobWindow::initialiseAutorefineWindow()
 	setupTabs(7);
 	tab1->begin();
 	tab1->label("I/O");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	if (is_tomo)
@@ -1626,6 +1668,7 @@ void JobWindow::initialiseAutorefineWindow()
 	tab1->end();
 	tab2->begin();
 	tab2->label("Reference");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("ref_correct_greyscale", TOGGLE_DEACTIVATE);
@@ -1637,8 +1680,9 @@ void JobWindow::initialiseAutorefineWindow()
 	tab2->end();
 	tab3->begin();
 	tab3->label("CTF");
+	tab3->labelsize(ENTRY_FONTSIZE);
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 
 	resetHeight();
@@ -1654,6 +1698,7 @@ void JobWindow::initialiseAutorefineWindow()
 	tab3->end();
 	tab4->begin();
 	tab4->label("Optimisation");
+	tab4->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("particle_diameter");
@@ -1666,6 +1711,7 @@ void JobWindow::initialiseAutorefineWindow()
 	tab4->end();
 	tab5->begin();
 	tab5->label("Auto-sampling");
+	tab5->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("sampling", TOGGLE_DEACTIVATE);
@@ -1681,8 +1727,9 @@ void JobWindow::initialiseAutorefineWindow()
 	tab5->end();
 	tab6->begin();
 	tab6->label("Helix");
+	tab6->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
-	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group2->end();
 
 	place("do_helix", TOGGLE_DEACTIVATE, group2);
@@ -1695,7 +1742,7 @@ void JobWindow::initialiseAutorefineWindow()
 	// Add a little spacer
 	current_y += STEPY/2;
 
-	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group5->end();
 	place("do_apply_helical_symmetry", TOGGLE_DEACTIVATE, group5);
 	group5->begin();
@@ -1708,7 +1755,7 @@ void JobWindow::initialiseAutorefineWindow()
 	// Add a little spacer
 	current_y += STEPY/2;
 
-	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group3->end();
 	place("do_local_search_helical_symmetry", TOGGLE_DEACTIVATE, group3);
 	group3->begin();
@@ -1724,12 +1771,13 @@ void JobWindow::initialiseAutorefineWindow()
 
 	tab7->begin();
 	tab7->label("Compute");
+	tab7->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("do_parallel_discio");
 	place("nr_pool");
 	place("do_pad1");
-	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group4->end();
 	place("do_preread_images", TOGGLE_LEAVE_ACTIVE, group4, true);
 	group4->begin();
@@ -1741,7 +1789,7 @@ void JobWindow::initialiseAutorefineWindow()
 	current_y += STEPY/2;
 
 	// Set up queue groups for running tab
-	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group5->end();
 	place("use_gpu", TOGGLE_LEAVE_ACTIVE, group5);
 	group5->begin();
@@ -1757,6 +1805,7 @@ void JobWindow::initialiseMultiBodyWindow()
 	setupTabs(4);
 	tab1->begin();
 	tab1->label("I/O");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("fn_in", TOGGLE_DEACTIVATE);
@@ -1771,6 +1820,7 @@ void JobWindow::initialiseMultiBodyWindow()
 	tab1->end();
 	tab2->begin();
 	tab2->label("Auto-sampling");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("sampling", TOGGLE_DEACTIVATE);
@@ -1781,9 +1831,10 @@ void JobWindow::initialiseMultiBodyWindow()
 
 	tab3->begin();
 	tab3->label("Analyse");
+	tab3->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group5 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group5->end();
 
 	place("do_analyse", TOGGLE_LEAVE_ACTIVE, group5);
@@ -1791,7 +1842,7 @@ void JobWindow::initialiseMultiBodyWindow()
 
 	place("nr_movies");
 
-	group6 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group6 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group6->end();
 
 	place("do_select", TOGGLE_LEAVE_ACTIVE, group6);
@@ -1810,12 +1861,13 @@ void JobWindow::initialiseMultiBodyWindow()
 
 	tab4->begin();
 	tab4->label("Compute");
+	tab4->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("do_parallel_discio");
 	place("nr_pool");
 	place("do_pad1");
-	group7 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group7 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group7->end();
 	place("do_preread_images", TOGGLE_LEAVE_ACTIVE, group7, true);
 	group7->begin();
@@ -1827,7 +1879,7 @@ void JobWindow::initialiseMultiBodyWindow()
 	current_y += STEPY/2;
 
 	// Set up queue groups for running tab
-	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group4->end();
 	place("use_gpu", TOGGLE_LEAVE_ACTIVE, group4);
 	group4->begin();
@@ -1843,6 +1895,7 @@ void JobWindow::initialiseMaskcreateWindow()
 	setupTabs(3);
 	tab1->begin();
 	tab1->label("I/O");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("fn_in", TOGGLE_DEACTIVATE); //(current_y, "Input 3D map:", NODE_3DREF, "", "MRC map files (*.mrc)", "Provide an input MRC map from which to start binarizing the map.");
@@ -1850,6 +1903,7 @@ void JobWindow::initialiseMaskcreateWindow()
 
 	tab2->begin();
 	tab2->label("Mask");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("lowpass_filter");
@@ -1866,9 +1920,10 @@ void JobWindow::initialiseMaskcreateWindow()
 
 	tab3->begin();
 	tab3->label("Helix");
+	tab3->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 
 	place("do_helix", TOGGLE_LEAVE_ACTIVE, group1);
@@ -1888,9 +1943,10 @@ void JobWindow::initialiseJoinstarWindow()
 	setupTabs(3);
 	tab1->begin();
 	tab1->label("particles");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 	place("do_part", TOGGLE_DEACTIVATE, group1);
 	group1->begin();
@@ -1905,9 +1961,10 @@ void JobWindow::initialiseJoinstarWindow()
 
 	tab2->begin();
 	tab2->label("micrographs");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group2->end();
 	place("do_mic", TOGGLE_DEACTIVATE, group2);
 	group2->begin();
@@ -1922,9 +1979,10 @@ void JobWindow::initialiseJoinstarWindow()
 
 	tab3->begin();
 	tab3->label("movies");
+	tab3->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group3->end();
 	place("do_mov", TOGGLE_DEACTIVATE, group3); //(current_y, "Combine movie STAR files?", false, "", mov_group);
 	group3->begin();
@@ -1943,12 +2001,13 @@ void JobWindow::initialiseSubtractWindow()
 	setupTabs(2);
 	tab1->begin();
 	tab1->label("I/O");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("fn_opt", TOGGLE_DEACTIVATE);
 	place("fn_mask", TOGGLE_DEACTIVATE);
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 	place("do_data", TOGGLE_DEACTIVATE, group1);
 
@@ -1960,7 +2019,7 @@ void JobWindow::initialiseSubtractWindow()
 
 	current_y += STEPY/2;
 
-	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group2->end();
 	place("do_fliplabel", TOGGLE_DEACTIVATE, group2);
 
@@ -1973,15 +2032,16 @@ void JobWindow::initialiseSubtractWindow()
 
 	tab2->begin();
 	tab2->label("Centering");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group3->end();
 	place("do_center_mask", TOGGLE_DEACTIVATE, group3, true);
 
 	group3->begin();
 
-	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group4->end();
 	place("do_center_xyz", TOGGLE_DEACTIVATE, group4);
 
@@ -2006,6 +2066,7 @@ void JobWindow::initialisePostprocessWindow()
 
 	tab1->begin();
 	tab1->label("I/O");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	if (is_tomo)
@@ -2025,9 +2086,10 @@ void JobWindow::initialisePostprocessWindow()
 
 	tab2->begin();
 	tab2->label("Sharpen");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 	place("do_auto_bfac", TOGGLE_LEAVE_ACTIVE, group1);
 
@@ -2036,7 +2098,7 @@ void JobWindow::initialisePostprocessWindow()
 	group1->end();
 	guientries["do_auto_bfac"].cb_menu_i();
 
-	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group2->end();
 	place("do_adhoc_bfac", TOGGLE_LEAVE_ACTIVE, group2);
 
@@ -2047,7 +2109,7 @@ void JobWindow::initialisePostprocessWindow()
 
 	current_y += STEPY/2;
 
-	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group3->end();
 
 	place("do_skip_fsc_weighting", TOGGLE_LEAVE_ACTIVE, group3);
@@ -2071,6 +2133,7 @@ void JobWindow::initialiseLocresWindow()
 
 	tab1->begin();
 	tab1->label("I/O");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("fn_in", TOGGLE_DEACTIVATE);
@@ -2084,9 +2147,10 @@ void JobWindow::initialiseLocresWindow()
 
 	tab2->begin();
 	tab2->label("ResMap");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 
 	place("do_resmap_locres", TOGGLE_DEACTIVATE, group1);
@@ -2109,9 +2173,10 @@ void JobWindow::initialiseLocresWindow()
 
 	tab3->begin();
 	tab3->label("Relion");
+	tab3->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group2->end();
 
 	place("do_relion_locres", TOGGLE_DEACTIVATE, group2);
@@ -2136,6 +2201,7 @@ void JobWindow::initialiseMotionrefineWindow()
 
 	tab1->begin();
 	tab1->label("I/O");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	// I/O
@@ -2162,10 +2228,11 @@ void JobWindow::initialiseMotionrefineWindow()
 
 	tab2->begin();
 	tab2->label("Train");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	// Train for optimal parameters
-	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group2->end();
 	place("do_param_optim", TOGGLE_LEAVE_ACTIVE, group2);
 
@@ -2181,10 +2248,11 @@ void JobWindow::initialiseMotionrefineWindow()
 
 	tab3->begin();
 	tab3->label("Polish");
+	tab3->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	// Polishing
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 	place("do_polish", TOGGLE_DEACTIVATE, group1);
 
@@ -2194,7 +2262,7 @@ void JobWindow::initialiseMotionrefineWindow()
 
 	place("opt_params", TOGGLE_DEACTIVATE);
 
-	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group4->end();
 	place("do_own_params", TOGGLE_DEACTIVATE, group4);
 
@@ -2219,6 +2287,7 @@ void JobWindow::initialiseCtfrefineWindow()
 
 	tab1->begin();
 	tab1->label("I/O");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	// I/O
@@ -2229,9 +2298,10 @@ void JobWindow::initialiseCtfrefineWindow()
 
 	tab2->begin();
 	tab2->label("Fit");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group3->end();
 	place("do_aniso_mag", TOGGLE_LEAVE_ACTIVE, group3, true); //true means: activating aniso_mag will deactive higher-order aberrations
 
@@ -2239,7 +2309,7 @@ void JobWindow::initialiseCtfrefineWindow()
 
 	group3->begin();
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 	place("do_ctf", TOGGLE_LEAVE_ACTIVE, group1);
 
@@ -2255,7 +2325,7 @@ void JobWindow::initialiseCtfrefineWindow()
 
 	current_y += STEPY /2 ;
 
-	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group4->end();
 	place("do_tilt", TOGGLE_LEAVE_ACTIVE, group4);
 
@@ -2286,6 +2356,7 @@ void JobWindow::initialiseExternalWindow()
 
 	tab1->begin();
 	tab1->label("Input");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	// I/O
@@ -2303,6 +2374,7 @@ void JobWindow::initialiseExternalWindow()
 
 	tab2->begin();
 	tab2->label("Params");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place2("param1_label", "param1_value", "Param1 label, value:", TOGGLE_LEAVE_ACTIVE);
@@ -2324,6 +2396,7 @@ void JobWindow::placeTomoInput(bool has_tomograms, bool has_particles,
 {
 	tab1->begin();
 	tab1->label("I/O");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("in_optimisation", TOGGLE_DEACTIVATE);
@@ -2351,9 +2424,10 @@ void JobWindow::initialiseTomoImportWindow()
 
 	tab1->begin();
 	tab1->label("Tomograms");
+	tab1->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 	place("do_tomo", TOGGLE_DEACTIVATE, group1, false);
 	group1->begin();
@@ -2381,9 +2455,10 @@ void JobWindow::initialiseTomoImportWindow()
 
 	tab2->begin();
 	tab2->label("Coordinates");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group2->end();
 	place("do_coords", TOGGLE_DEACTIVATE, group2, false);
 	group2->begin();
@@ -2401,9 +2476,10 @@ void JobWindow::initialiseTomoImportWindow()
 
 	tab3->begin();
 	tab3->label("Others");
+	tab3->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group3->end();
 
 	place("do_other", TOGGLE_DEACTIVATE, group3, false);
@@ -2434,6 +2510,7 @@ void JobWindow::initialiseTomoSubtomoWindow()
 
 	tab2->begin();
 	tab2->label("Reconstruct");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("box_size", TOGGLE_DEACTIVATE);
@@ -2446,7 +2523,7 @@ void JobWindow::initialiseTomoSubtomoWindow()
 
 	current_y += STEPY /2 ;
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 	place("do_cone_weight", TOGGLE_DEACTIVATE, group1);
 
@@ -2468,13 +2545,14 @@ void JobWindow::initialiseTomoCtfRefineWindow()
 
 	tab2->begin();
 	tab2->label("Defocus");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("box_size", TOGGLE_DEACTIVATE);
 
 	current_y += STEPY /2 ;
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 	place("do_defocus", TOGGLE_DEACTIVATE, group1);
 
@@ -2482,7 +2560,7 @@ void JobWindow::initialiseTomoCtfRefineWindow()
 
 	place("focus_range", TOGGLE_DEACTIVATE);
 
-	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group2->end();
 	place("do_reg_def", TOGGLE_DEACTIVATE, group2);
 
@@ -2497,7 +2575,7 @@ void JobWindow::initialiseTomoCtfRefineWindow()
 
 	current_y += STEPY /2 ;
 
-	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group3->end();
 	place("do_scale", TOGGLE_DEACTIVATE, group3);
 
@@ -2512,9 +2590,10 @@ void JobWindow::initialiseTomoCtfRefineWindow()
 	tab2->end();
 	tab3->begin();
 	tab3->label("Aberrations");
+	tab3->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group3->end();
 	place("do_odd_aberr", TOGGLE_DEACTIVATE, group3);
 
@@ -2527,7 +2606,7 @@ void JobWindow::initialiseTomoCtfRefineWindow()
 
 	current_y += STEPY /2 ;
 
-	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group4->end();
 	place("do_even_aberr", TOGGLE_DEACTIVATE, group4);
 
@@ -2549,6 +2628,7 @@ void JobWindow::initialiseTomoAlignWindow()
 
 	tab2->begin();
 	tab2->label("Polish");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
 	place("box_size", TOGGLE_DEACTIVATE);
@@ -2556,7 +2636,7 @@ void JobWindow::initialiseTomoAlignWindow()
 
 	current_y += STEPY /2 ;
 
-	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group3 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group3->end();
 	place("do_shift_align", TOGGLE_DEACTIVATE, group3);
 	group3->begin();
@@ -2568,9 +2648,10 @@ void JobWindow::initialiseTomoAlignWindow()
 	tab2->end();
 	tab3->begin();
 	tab3->label("Motion");
+	tab3->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group2 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group2->end();
 	place("do_motion", TOGGLE_DEACTIVATE, group2);
 
@@ -2588,9 +2669,10 @@ void JobWindow::initialiseTomoAlignWindow()
 	tab3->end();
 	tab4->begin();
 	tab4->label("Deformations");
+	tab4->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group4 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group4->end();
 	place("do_deform", TOGGLE_DEACTIVATE, group4);
 
@@ -2620,9 +2702,10 @@ void JobWindow::initialiseTomoReconParWindow()
 
 	tab2->begin();
 	tab2->label("Average");
+	tab2->labelsize(ENTRY_FONTSIZE);
 	resetHeight();
 
-	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 550, 600-MENUHEIGHT, "");
+	group1 = new Fl_Group(WCOL0,  MENUHEIGHT, 900, 720-MENUHEIGHT, "");
 	group1->end();
 	place("do_from2d", TOGGLE_DEACTIVATE, group1);
 

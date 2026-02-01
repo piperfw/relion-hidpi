@@ -82,22 +82,22 @@ extern bool create_scheduler_gui;
 #define GUIEXTRA \
 	( (getenv ("RELION_QSUB_EXTRA_COUNT"))? \
 	(std::max(0,(atoi(getenv ("RELION_QSUB_EXTRA_COUNT"))-4))*STEPY) : 0 )
-#define MENUHEIGHT 30
-#define TABHEIGHT 25
-#define GUIWIDTH 800
-#define GUIHEIGHT_OLD 420+GUIEXTRA
-#define GUIHEIGHT_EXT_START 370+GUIEXTRA
+#define MENUHEIGHT 36
+#define TABHEIGHT 30
+#define GUIWIDTH 1100
+#define GUIHEIGHT_OLD 504+GUIEXTRA
+#define GUIHEIGHT_EXT_START 444+GUIEXTRA
 #define GUIHEIGHT_EXT_START2 (GUIHEIGHT_EXT_START+MENUHEIGHT+10)
-#define GUIHEIGHT_EXT 800+GUIEXTRA
-#define XCOL0 200
-#define WCOL0 200
+#define GUIHEIGHT_EXT 960+GUIEXTRA
+#define XCOL0 240
+#define WCOL0 240
 #define XCOL1 ( (XCOL0) + 10  )
-#define XCOL2 ( (XCOL0) + 280 )
-#define XCOL3 ( (XCOL0) + 480 )
-#define XCOL4 ( (XCOL0) + 495 )
-#define XCOL5 ( (XCOL0) + 555 )
-#define ENTRY_FONTSIZE 13
-#define STEPY 20
+#define XCOL2 ( (XCOL0) + 340 )
+#define XCOL3 ( (XCOL0) + 660 )
+#define XCOL4 ( (XCOL0) + 700 )
+#define XCOL5 ( (XCOL0) + 820 )
+#define ENTRY_FONTSIZE 18
+#define STEPY 24
 #define COLUMN_SEPARATION 3
 #define WCOL1 ( (XCOL2) - (XCOL1) - (COLUMN_SEPARATION) )
 #define WCOL2 ( (XCOL3) - (XCOL2) - (COLUMN_SEPARATION) )

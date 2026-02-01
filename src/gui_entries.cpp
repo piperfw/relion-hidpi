@@ -106,7 +106,8 @@ void GuiEntry::initialise(int x, int y, Fl_Group * deactivate_this_group, bool _
 
 	// The input field
 	int mywidth = (joboption.joboption_type == JOBOPTION_SLIDER && !create_scheduler_gui) ? 50 : wcol2;
-	inp = new Fl_Input(x, y, mywidth, height, joboption.label_gui.c_str());
+	inp = new Fl_Input(x, y, mywidth, height);
+	inp->copy_label(joboption.label_gui.c_str());
 	inp->color(GUI_INPUT_COLOR);
 	inp->textsize(ENTRY_FONTSIZE);
 	inp->labelsize(ENTRY_FONTSIZE);
@@ -306,6 +307,7 @@ void GuiEntry::cb_browse_i()
 {
 
 	Fl::scheme("gtk+");
+	FL_NORMAL_SIZE = ENTRY_FONTSIZE;
 	Fl_File_Chooser * G_chooser = new Fl_File_Chooser("", joboption.pattern.c_str(), Fl_File_Chooser::SINGLE, "");
 
 	if (joboption.directory=="CURRENT_ODIR")
@@ -347,6 +349,7 @@ void GuiEntry::cb_browse_node(Fl_Widget* o, void* v) {
 
 void GuiEntry::cb_browse_node_i() {
 	Fl::scheme("gtk+");
+	FL_NORMAL_SIZE = ENTRY_FONTSIZE;
 	Fl_File_Chooser * G_chooser = new Fl_File_Chooser("", joboption.pattern.c_str(), Fl_File_Chooser::SINGLE, "");
 
 	//FileName mylabel = get_node_label(joboption.node_type);
