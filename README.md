@@ -11,6 +11,12 @@ If RELION is useful in your work, please cite this paper.
 
 The more comprehensive documentation of RELION is stored [here](https://relion.readthedocs.io/en/release-4.0/).
 
+## HiDPI Version
+
+With increased GUI and font sizes:
+
+![Comparison of RELION4.0 and RELION4.0 HiDPI GUI](relion-hidpi-comparison.png)
+
 ## Installation
 
 More extensive options and configurations are available [here](https://relion.readthedocs.io/en/release-4.0/Installation.html),
